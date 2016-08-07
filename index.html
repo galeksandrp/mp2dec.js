@@ -69,10 +69,13 @@ pcm=[];
 value=kjmp2_decode_frame(mp2,frame,pcm,l,r);
 if (value) {
 if (!!(window.AudioContext || window.webkitAudioContext)) {
-for(var i=0;i<l.length;i++){
-lchannel.push(l[i]);
-rchannel.push(r[i]);
-};
+if (typeof lchannel === 'undefined') {
+lchannel = new Float32Array(frame.length/value*1152);
+rchannel = new Float32Array(frame.length/value*1152);
+}
+lchannel.set(l, nframe*1152);
+rchannel.set(r, nframe*1152);
+nframe++;
 } else {
 for(var i=0;i<l.length;i++){
 dec.push(l[i]);
@@ -113,8 +116,7 @@ document.body.appendChild(s);
 get_mp2(function(){
 s.parentNode.removeChild(s);
 dec=[];
-lchannel = [];
-rchannel = [];
+nframe = 0;
 r=[];
 l=[];
 buffer = xhr.response ? xhr.response : xhr.mozResponseArrayBuffer;
@@ -191,8 +193,8 @@ var  requestSoundData=function(soundData) {
     if (!!(window.AudioContext || window.webkitAudioContext)) {
       var context = new (window.AudioContext || window.webkitAudioContext)();
       var sndbuffer = context.createBuffer(2, lchannel.length + rchannel.length, sampleRate);
-      sndbuffer.copyToChannel(new Float32Array(lchannel), 0, 0);
-      sndbuffer.copyToChannel(new Float32Array(rchannel), 1, 0);
+      sndbuffer.copyToChannel(lchannel, 0, 0);
+      sndbuffer.copyToChannel(rchannel, 1, 0);
       var source = context.createBufferSource();
       source.buffer = sndbuffer;
       source.connect(context.destination);
