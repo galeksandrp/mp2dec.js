@@ -1,5 +1,5 @@
 {
-  "name": "mp2dec.js",
+  "name": "mp2dec",
   "version": "0.1.0",
   "description": "JavaScript MPEG-1 Audio Layer II decoder",
   "main": "mp2dec.js",
