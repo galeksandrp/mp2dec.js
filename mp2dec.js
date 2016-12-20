@@ -1,6 +1,3 @@
-<html>
-<body>
-<script>
 /*
     mp2dec.js JavaScript MPEG-1 Audio Layer II decoder
     Copyright (C) 2011 Liam Wilson
@@ -851,6 +848,3 @@ return {id: null,    V:[[],[]],
 
 exports={kjmp2_decode_frame: kjmp2_decode_frame ,kjmp2_get_sample_rate: kjmp2_get_sample_rate,kjmp2_init: kjmp2_init, kjmp2_get_sample_rate: kjmp2_get_sample_rate, kjmp2_make_mp2_state: kjmp2_make_mp2_state };
 parent.foo=function(e){return eval(e)};
-</script>
-</body>
-</html>
