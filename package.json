@@ -1,0 +1,28 @@
+{
+  "name": "mp2dec.js",
+  "version": "0.1.0",
+  "description": "JavaScript MPEG-1 Audio Layer II decoder",
+  "main": "mp2dec.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galeksandrp/mp2dec.js.git"
+  },
+  "keywords": [
+    "mp2",
+    "decoder",
+    "mpeg",
+    "mpeg1",
+    "audio",
+    "kjmp2"
+  ],
+  "author": "Liam Wilson <cosinusoidaly@yahoo.co.uk>",
+  "contributors": ["Alexander Georgievskiy <galeksandrp@gmail.com>"],
+  "license": "GPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/cosinusoidally/mp2dec.js/issues"
+  },
+  "homepage": "https://github.com/galeksandrp/mp2dec.js#readme"
+}
